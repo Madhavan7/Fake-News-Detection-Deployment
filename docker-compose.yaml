@@ -1,0 +1,13 @@
+services:
+  data-pipeline:
+    image: amazon/aws-glue-libs:glue_libs_4.0.0_image_01
+    ports:
+      - 4040:4040
+      - 18080:18080
+    volumes:
+      - ~/.aws:/home/glue_user/.aws
+      - .:/home/glue_user/workspace/
+    environment:
+      - AWS_PROFILE=default
+      - DISABLE_SSL=true
+    command: pyspark
