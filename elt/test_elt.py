@@ -8,7 +8,6 @@ from awsglue.context import GlueContext
 from awsglue.job import Job
 import pyspark.sql.functions as f
 
-
 glueContext = get_glue_context()
 spark = glueContext.spark_session
 
